@@ -1,0 +1,13 @@
+---
+- name: Instalar o Nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Garantir que o Nginx esteja iniciado e habilitado no boot
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: yes

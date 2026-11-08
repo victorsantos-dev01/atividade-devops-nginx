@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Aplicar a role servidor_nginx
+      ansible.builtin.include_role:
+        name: joao.servidor_nginx
